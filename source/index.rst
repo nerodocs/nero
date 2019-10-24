@@ -9,12 +9,12 @@ Welcome to nero-docs's documentation!
 .. toctree::
    :maxdepth: 2
 
-   
+   designpattern
+
 
 
 Indices and tables
 ==================
 
 * :ref:`genindex`
-* :ref:`modindex`
 * :ref:`search`
