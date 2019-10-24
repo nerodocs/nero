@@ -20,3 +20,14 @@ NodeJS 13.x
 `MongoDB安装文档`_
 
 .. _MongoDB安装文档: https://docs.mongodb.com/manual/administration/install-community/
+
+Mysql
+----------------------------
+
+Mysql 用户授权
+`````````````````````
+
+.. code-block:: bash:
+
+    grant all privileges on *.* to 'root'@'localhost' identified by 'TWvoRu4Y5IgYwN1y' with grant option;
+    flush privileges;
