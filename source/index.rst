@@ -10,11 +10,3 @@ Welcome to nero-docs's documentation!
    :maxdepth: 2
 
    designpattern
-
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`search`
