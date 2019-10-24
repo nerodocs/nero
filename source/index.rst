@@ -9,5 +9,5 @@ Welcome to nero's documentation!
 .. toctree::
    :maxdepth: 2
 
+   install
    designpattern
-   nodejs
