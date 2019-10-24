@@ -17,7 +17,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'nero-docs'
+project = 'nero'
 copyright = '2019, Nero Zhang'
 author = 'Nero Zhang'
 
