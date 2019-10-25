@@ -79,6 +79,6 @@ Mysql 用户授权
 
 .. code-block:: bash:
 
-    grant all privileges on *.* to 'root'@'localhost' identified by 'TWvoRu4Y5IgYwN1y' with grant option;
+    grant all privileges on *.* to 'root'@'localhost' identified by 'passwrod' with grant option;
 
     flush privileges;
