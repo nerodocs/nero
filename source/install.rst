@@ -82,3 +82,33 @@ Mysql 用户授权
     grant all privileges on *.* to 'root'@'localhost' identified by 'passwrod' with grant option;
 
     flush privileges;
+
+Maven
+-----------------------------
+
+下载解压
+````````````````````````
+
+.. code-block:: bash:
+
+    # 下载
+    $ wget http://www.gtlib.gatech.edu/pub/apache/maven/maven-3/3.6.2/binaries/apache-maven-3.6.2-bin.zip
+
+    # 解压
+    $ unzip apache-maven-3.6.2-bin.zip
+
+配置环境变量
+``````````````````
+
+编辑 /etc/profile 文件 sudo vim /etc/profile，在文件末尾添加如下代码：
+
+.. code-block:: bash:
+
+    export MAVEN_HOME=/opt/apache-maven-3.6.2
+    export PATH=${PATH}:${MAVEN_HOME}/bin
+
+保存文件，并运行如下命令使环境变量生效：
+
+.. code-block:: bash:
+
+    $ source /etc/profile
