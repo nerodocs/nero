@@ -55,11 +55,30 @@ MongoDB
 Mysql
 ----------------------------
 
+`Mysql用户手册`_
+
+.. _Mysql用户手册: https://dev.mysql.com/doc/
+
+Mysql 配置
+````````````````````
+
+.. code-block:: properties:
+    
+    # 字符集
+    character-set-server = utf8mb4
+    collation-server = utf8mb4_unicode_ci
+
+    # 默认引擎
+    default-storage-engine = innodb
+
+    # 时区设置
+    system_time_zone = '+8:00'
+
 Mysql 用户授权
 `````````````````````
 
 .. code-block:: bash:
 
     grant all privileges on *.* to 'root'@'localhost' identified by 'TWvoRu4Y5IgYwN1y' with grant option;
-    
+
     flush privileges;
