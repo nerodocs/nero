@@ -37,17 +37,18 @@ MongoDB
     });
 
     db.updateUser(
-    "username", 
-    {
-        roles: [{
-                role: "readWrite",
-                db: "dbname"
-            },{
-                role: "dbAdmin",
-                db: "dbname"
-            }
-        ]
-    };
+        "username", 
+        {
+            roles: [{
+                    role: "readWrite",
+                    db: "dbname"
+                },{
+                    role: "dbAdmin",
+                    db: "dbname"
+                }
+            ]
+        };
+    ）
 
 .. _MongoDB安装文档: https://docs.mongodb.com/manual/administration/install-community/
 .. _MonggoDB配置文档: https://docs.mongodb.com/manual/reference/configuration-options/
