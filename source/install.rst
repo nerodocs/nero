@@ -109,6 +109,89 @@ Maven
 
     $ source /etc/profile
 
+Nginx
+---------------------------
+
+上传文件大小
+``````````````````````
+
+在nginx.conf中增加一句:
+
+.. code-block:: bash:
+    client_max_body_size 30m;
+
+一般配置
+````````````````````````
+
+.. code-block:: bash:
+
+    server  {
+        listen          80;
+        server_name     nero.readthedocs.io;
+        rewrite    ^ https://nero.readthedocs.io$request_uri? permanent;
+    }
+
+    server {
+        listen       443 ssl;
+        server_name  nero.readthedocs.io;
+        ssl_certificate nero.readthedocs.io.crt;
+        ssl_certificate_key nero.readthedocs.io.key;
+        ssl_session_timeout 5m;
+        ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;
+        ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+        ssl_prefer_server_ciphers on;
+        #charset koi8-r;
+        access_log  /var/log/nginx/nero.readthedocs.io.access.log  main;
+        error_log  /var/log/nginx/nero.readthedocs.io.error.log  error;
+
+        location /{
+            proxy_pass http://app_server/;
+            proxy_set_header Host $host;
+            proxy_set_header X-Forwarded-Port $server_port;
+            proxy_set_header X-Forwarded-For $remote_addr;
+            proxy_connect_timeout 90;
+            add_header Access-Control-Allow-Origin "$http_origin";
+            add_header Access-Control-Allow-Methods 'GET, POST, PUT, DELETE, OPTIONS';
+            add_header Access-Control-Allow-Credentials 'true';
+            add_header Access-Control-Allow-Headers 'Accept,token, Authorization,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,user';
+            if ($request_method = 'OPTIONS') {
+                add_header 'Access-Control-Allow-Origin' "$http_origin";
+                add_header 'Access-Control-Max-Age' 1728000;
+                add_header 'Access-Control-Allow-Credentials' 'true';
+                add_header 'Access-Control-Allow-Methods' 'GET, POST, DELETE, PUT, OPTIONS';
+                add_header 'Access-Control-Allow-Headers' 'JSESSIONID_AGENT,Accept,token, Authorization,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,user';
+                add_header 'Content-Type' 'text/plain charset=UTF-8';
+                add_header 'Content-Length' 0;
+                return 200;
+            }
+
+        }
+    }
+
+
+Websocket配置
+```````````````````
+
+.. code-block:: bash:
+
+    server  {
+        listen         221;
+        server_name    192.168.0.123;
+
+        location / {
+            proxy_pass              http://127.0.0.1:8083;
+            proxy_http_version 1.1;
+            proxy_set_header Upgrade $http_upgrade;
+            proxy_set_header Connection "upgrade";
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+        }
+
+        error_log           /var/log/nginx/ws_route_error.log;
+        access_log          /var/log/nginx/ws_access.log main;
+    }
+
+
 
 .. _NodeJs安装: https://github.com/nodesource/distributions#debmanual
 .. _MongoDB安装文档: https://docs.mongodb.com/manual/administration/install-community/
