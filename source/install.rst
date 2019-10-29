@@ -168,6 +168,14 @@ Nginx
         }
     }
 
+请求头中有下划线
+`````````````````````````
+
+在nginx.conf中增加一句:
+
+.. code-block:: bash:
+
+    underscores_in_headers on;
 
 Websocket配置
 ```````````````````
