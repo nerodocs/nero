@@ -112,6 +112,8 @@ Maven
 Nginx
 ---------------------------
 
+`Nginx安装参考`_
+
 上传文件大小
 ``````````````````````
 
@@ -205,3 +207,4 @@ Websocket配置
 .. _MongoDB安装文档: https://docs.mongodb.com/manual/administration/install-community/
 .. _MongoDB配置文档: https://docs.mongodb.com/manual/reference/configuration-options/
 .. _Mysql用户手册: https://dev.mysql.com/doc/
+.. _Nginx安装参考: https://www.nginx.com/resources/wiki/start/topics/tutorials/install/
