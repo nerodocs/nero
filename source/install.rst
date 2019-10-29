@@ -12,14 +12,13 @@ NodeJS 13.x
 
 `NodeJs安装`_
 
-.. _NodeJs安装: https://github.com/nodesource/distributions#debmanual
-
 MongoDB
 --------------------------
 
 安装MongoDB
 ```````````````````````
 `MongoDB安装文档`_
+
 
 配置MongoDB
 ```````````````````````
@@ -50,15 +49,11 @@ MongoDB
         };
     ）
 
-.. _MongoDB安装文档: https://docs.mongodb.com/manual/administration/install-community/
-.. _MonggoDB配置文档: https://docs.mongodb.com/manual/reference/configuration-options/
-
 Mysql
 ----------------------------
 
 `Mysql用户手册`_
 
-.. _Mysql用户手册: https://dev.mysql.com/doc/
 
 Mysql 配置
 ````````````````````
@@ -113,3 +108,9 @@ Maven
 .. code-block:: bash:
 
     $ source /etc/profile
+
+
+.. _NodeJs安装: https://github.com/nodesource/distributions#debmanual
+.. _MongoDB安装文档: https://docs.mongodb.com/manual/administration/install-community/
+.. _MongoDB配置文档: https://docs.mongodb.com/manual/reference/configuration-options/
+.. _Mysql用户手册: https://dev.mysql.com/doc/
